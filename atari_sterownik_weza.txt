@@ -1,0 +1,21 @@
+ADRES: 1540
+104         PLA
+162,8       LDX #n
+24          CLC
+216         CLD
+78,36,6     LSR Q
+144,5       BCC L
+169,47      LDA #n
+76,21,6     JMP Q
+169,0       LDA #n
+157,101,158 STA Q,X
+157,93,158  STA Q,X
+202         DEX
+224,0       CPX #n
+240,3       BEQ L
+76,9,6      JMP Q
+96          RTS
+0           BRK
+
+#BASIC
+PP=PEEK(54018):POKE 54018,PP-4:POKE 54016,255:POKE 54018,PP
